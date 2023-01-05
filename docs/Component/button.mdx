@@ -1,0 +1,277 @@
+---
+hide_table_of_contents: true
+---
+
+# Button
+
+To trigger an operation
+
+## When To Use
+
+A button means an operation (or a series of operations). Clicking a button will trigger corresponding business logic.
+
+In Ant Design we provide 5 types of button.
+
+- Primary button: indicate the main action, one primary button at most in one section.
+
+- Default button: indicate a series of actions without priority.
+
+- Dashed button: used for adding action commonly.
+
+- Text button: used for the most secondary action.
+
+- Link button: used for external links.
+
+And 4 other properties additionally.
+
+- `danger`: used for actions of risk, like deletion or authorization.
+- `ghost`: used in situations with complex background, home pages usually.
+- `disable`: when actions are not available.
+- `loading`: add loading spinner in button, avoiding multiple submits too.
+
+## Example
+
+import BoxDesign from "@components/BoxDesign";
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import Wrapper from "@components/Wrapper";
+import DocCardList from "@theme/DocCardList";
+import DocCard from "@theme/DocCard";
+
+<Wrapper display="flex" flexWrap="nowrap">
+
+<Wrapper width="50%">
+<BoxDesign
+  onClick={() => {
+    alert("button clicked!");
+  }}
+/>
+
+<Tabs groupId="button">
+<TabItem value="TypeScript">
+
+```tsx
+import { Button } from "antd";
+import React from "react";
+
+const App: React.FC = () => (
+  <>
+    <Button type="primary">Primary Button</Button>
+    <Button>Default Button</Button>
+    <Button type="dashed">Dashed Button</Button>
+    <br />
+    <Button type="text">Text Button</Button>
+    <Button type="link">Link Button</Button>
+  </>
+);
+
+export default App;
+```
+
+</TabItem>
+<TabItem value="JavaScript">
+
+```jsx
+import { Button } from "antd";
+import React from "react";
+const App = () => (
+  <>
+    <Button type="primary">Primary Button</Button>
+    <Button>Default Button</Button>
+    <Button type="dashed">Dashed Button</Button>
+    <br />
+    <Button type="text">Text Button</Button>
+    <Button type="link">Link Button</Button>
+  </>
+);
+export default App;
+```
+
+</TabItem>
+</Tabs>
+
+</Wrapper>
+
+<Wrapper width="50%">
+
+import LoadingButton from "@components/BoxDesign/LoadingButton";
+
+<LoadingButton />
+
+<Tabs groupId="buttonV1">
+<TabItem value="TypeScript">
+
+```tsx
+import { SearchOutlined } from "@ant-design/icons";
+import { Button, Tooltip } from "antd";
+import React from "react";
+
+const App: React.FC = () => (
+  <>
+    <Tooltip title="search">
+      <Button type="primary" shape="circle" icon={<SearchOutlined />} />
+    </Tooltip>
+    <Button type="primary" shape="circle">
+      A
+    </Button>
+    <Button type="primary" icon={<SearchOutlined />}>
+      Search
+    </Button>
+    <Tooltip title="search">
+      <Button shape="circle" icon={<SearchOutlined />} />
+    </Tooltip>
+    <Button icon={<SearchOutlined />}>Search</Button>
+    <br />
+    <Tooltip title="search">
+      <Button shape="circle" icon={<SearchOutlined />} />
+    </Tooltip>
+    <Button icon={<SearchOutlined />}>Search</Button>
+    <Tooltip title="search">
+      <Button type="dashed" shape="circle" icon={<SearchOutlined />} />
+    </Tooltip>
+    <Button type="dashed" icon={<SearchOutlined />}>
+      Search
+    </Button>
+    <Button icon={<SearchOutlined />} href="https://www.google.com" />
+    <br />
+    <br />
+    <Tooltip title="search">
+      <Button
+        type="primary"
+        shape="circle"
+        icon={<SearchOutlined />}
+        size="large"
+      />
+    </Tooltip>
+    <Button type="primary" shape="circle" size="large">
+      A
+    </Button>
+    <Button type="primary" icon={<SearchOutlined />} size="large">
+      Search
+    </Button>
+    <Tooltip title="search">
+      <Button shape="circle" icon={<SearchOutlined />} size="large" />
+    </Tooltip>
+    <Button icon={<SearchOutlined />} size="large">
+      Search
+    </Button>
+    <br />
+    <Tooltip title="search">
+      <Button shape="circle" icon={<SearchOutlined />} size="large" />
+    </Tooltip>
+    <Button icon={<SearchOutlined />} size="large">
+      Search
+    </Button>
+    <Tooltip title="search">
+      <Button
+        type="dashed"
+        shape="circle"
+        icon={<SearchOutlined />}
+        size="large"
+      />
+    </Tooltip>
+    <Button type="dashed" icon={<SearchOutlined />} size="large">
+      Search
+    </Button>
+    <Button
+      icon={<SearchOutlined />}
+      size="large"
+      href="https://www.google.com"
+    />
+  </>
+);
+
+export default App;
+```
+
+</TabItem>
+<TabItem value="JavaScript">
+
+```jsx
+import { SearchOutlined } from "@ant-design/icons";
+import { Button, Tooltip } from "antd";
+import React from "react";
+const App = () => (
+  <>
+    <Tooltip title="search">
+      <Button type="primary" shape="circle" icon={<SearchOutlined />} />
+    </Tooltip>
+    <Button type="primary" shape="circle">
+      A
+    </Button>
+    <Button type="primary" icon={<SearchOutlined />}>
+      Search
+    </Button>
+    <Tooltip title="search">
+      <Button shape="circle" icon={<SearchOutlined />} />
+    </Tooltip>
+    <Button icon={<SearchOutlined />}>Search</Button>
+    <br />
+    <Tooltip title="search">
+      <Button shape="circle" icon={<SearchOutlined />} />
+    </Tooltip>
+    <Button icon={<SearchOutlined />}>Search</Button>
+    <Tooltip title="search">
+      <Button type="dashed" shape="circle" icon={<SearchOutlined />} />
+    </Tooltip>
+    <Button type="dashed" icon={<SearchOutlined />}>
+      Search
+    </Button>
+    <Button icon={<SearchOutlined />} href="https://www.google.com" />
+    <br />
+    <br />
+    <Tooltip title="search">
+      <Button
+        type="primary"
+        shape="circle"
+        icon={<SearchOutlined />}
+        size="large"
+      />
+    </Tooltip>
+    <Button type="primary" shape="circle" size="large">
+      A
+    </Button>
+    <Button type="primary" icon={<SearchOutlined />} size="large">
+      Search
+    </Button>
+    <Tooltip title="search">
+      <Button shape="circle" icon={<SearchOutlined />} size="large" />
+    </Tooltip>
+    <Button icon={<SearchOutlined />} size="large">
+      Search
+    </Button>
+    <br />
+    <Tooltip title="search">
+      <Button shape="circle" icon={<SearchOutlined />} size="large" />
+    </Tooltip>
+    <Button icon={<SearchOutlined />} size="large">
+      Search
+    </Button>
+    <Tooltip title="search">
+      <Button
+        type="dashed"
+        shape="circle"
+        icon={<SearchOutlined />}
+        size="large"
+      />
+    </Tooltip>
+    <Button type="dashed" icon={<SearchOutlined />} size="large">
+      Search
+    </Button>
+    <Button
+      icon={<SearchOutlined />}
+      size="large"
+      href="https://www.google.com"
+    />
+  </>
+);
+export default App;
+```
+
+</TabItem>
+</Tabs>
+
+</Wrapper>
+
+</Wrapper>
